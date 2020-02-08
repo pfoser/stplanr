@@ -231,7 +231,7 @@ route_cyclestreets <- function(from, to, plan = "fastest", silent = TRUE, pat = 
 #' }
 route_graphhopper <- function(from, to, l = NULL, vehicle = "bike",
                               silent = TRUE, pat = NULL,
-                              base_url = "https://graphhopper.com") {
+                              base_url = "https://graphhopper.com/api/1") {
 
   # Convert character strings to lon/lat if needs be
   coords <- od_coords(from, to, l)
@@ -242,7 +242,7 @@ route_graphhopper <- function(from, to, l = NULL, vehicle = "bike",
 
   httrmsg <- httr::modify_url(
     base_url,
-    path = "/api/1/route",
+    path = "/route",
     query = list(
       point = paste0(coords[1, c("fy", "fx")], collapse = ","),
       point = paste0(coords[1, c("ty", "tx")], collapse = ","),
