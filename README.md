@@ -208,7 +208,7 @@ The development version can be installed using **devtools**:
 
 ``` r
 # install.packages("devtools") # if not already installed
-devtools::install_github("ropensci/stplanr")
+devtools::install_github("pfoser/stplanr")
 library(stplanr)
 ```
 
